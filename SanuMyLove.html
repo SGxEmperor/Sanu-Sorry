@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8dce8">
+  <title>For Sanvi ❤️</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blush: #f7d8e5;
+      --pink: #f3bfd4;
+      --rose: #d98daa;
+      --lavender: #ddd4f3;
+      --lavender-deep: #b9a6dc;
+      --cream: #fffaf7;
+      --peach: #f9ddcf;
+      --text: #4b3b46;
+      --muted: #806d78;
+      --white-glass: rgba(255, 255, 255, 0.48);
+      --border: rgba(255, 255, 255, 0.65);
+      --shadow: rgba(142, 99, 121, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(247, 216, 229, 0.8), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(221, 212, 243, 0.75), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(249, 221, 207, 0.8), transparent 35%),
+        linear-gradient(135deg, #fff9f7, #fcebf2 45%, #f3effb);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 100;
+      background: radial-gradient(
+        circle at center,
+        transparent 35%,
+        rgba(102, 70, 91, 0.035) 100%
+      );
+    }
+
+    /* =========================
+       AMBIENT BACKGROUND
+    ========================= */
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.35;
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+
+    .blob.one {
+      width: 320px;
+      height: 320px;
+      background: #f2b9d0;
+      top: 5%;
+      left: -100px;
+    }
+
+    .blob.two {
+      width: 380px;
+      height: 380px;
+      background: #cfc1ec;
+      right: -120px;
+      top: 30%;
+      animation-delay: -6s;
+    }
+
+    .blob.three {
+      width: 300px;
+      height: 300px;
+      background: #f6cdbd;
+      bottom: -100px;
+      left: 35%;
+      animation-delay: -11s;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+      to {
+        transform: translate3d(40px, -30px, 0) scale(1.12);
+      }
+    }
+
+    /* =========================
+       FLOATING PARTICLES
+    ========================= */
+
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      bottom: -30px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.75);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.8;
+      }
+
+      80% {
+        opacity: 0.35;
+      }
+
+      100% {
+        transform: translateY(-110vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       NORMAL FLOATING HEARTS
+    ========================= */
+
+    .heart {
+      position: fixed;
+      bottom: -50px;
+      pointer-events: none;
+      z-index: 2;
+      color: rgba(214, 126, 158, 0.28);
+      font-size: 18px;
+      animation: heartFloat linear forwards;
+    }
+
+    @keyframes heartFloat {
+      0% {
+        transform: translateY(0) rotate(0deg) scale(0.7);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(25deg) scale(1.15);
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       HEART RAIN
+    ========================= */
+
+    #heartRain {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100vh;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 9999;
+    }
+
+    .rain-heart {
+      position: absolute;
+      top: -100px;
+      user-select: none;
+      pointer-events: none;
+      will-change: transform, opacity;
+      filter: drop-shadow(
+        0 6px 12px rgba(190, 92, 132, 0.25)
+      );
+      animation: rainHeartFall linear forwards;
+    }
+
+    @keyframes rainHeartFall {
+      0% {
+        transform:
+          translate3d(0, -100px, 0)
+          rotate(0deg)
+          scale(0.4);
+        opacity: 0;
+      }
+
+      8% {
+        opacity: 1;
+      }
+
+      35% {
+        transform:
+          translate3d(var(--sway-one), 35vh, 0)
+          rotate(var(--rotation-one))
+          scale(1);
+      }
+
+      65% {
+        transform:
+          translate3d(var(--sway-two), 70vh, 0)
+          rotate(var(--rotation-two))
+          scale(1.05);
+      }
+
+      100% {
+        transform:
+          translate3d(var(--sway-three), 115vh, 0)
+          rotate(var(--rotation-three))
+          scale(0.75);
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    main {
+      position: relative;
+      z-index: 3;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      animation: heroReveal 1.4s ease both;
+    }
+
+    @keyframes heroReveal {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 18px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(15px);
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 40px var(--shadow);
+    }
+
+    .eyebrow span {
+      color: #d783a4;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(4.2rem, 11vw, 8rem);
+      line-height: 0.85;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      color: #563f4c;
+      text-shadow: 0 8px 30px rgba(111, 69, 91, 0.1);
+    }
+
+    .hero-subtitle {
+      max-width: 570px;
+      margin: 30px auto 42px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .hero-heart {
+      display: block;
+      font-size: 2.4rem;
+      margin-top: 25px;
+      animation: heartbeat 2.2s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      14% {
+        transform: scale(1.15);
+      }
+
+      28% {
+        transform: scale(1);
+      }
+
+      42% {
+        transform: scale(1.1);
+      }
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .button {
+      border: 0;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, #d990ad, #b99bdb);
+      padding: 15px 27px;
+      border-radius: 100px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+      box-shadow:
+        0 12px 35px rgba(191, 124, 158, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 18px 42px rgba(191, 124, 158, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    }
+
+    .button:active {
+      transform: translateY(-1px);
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section.content-section {
+      width: min(1050px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 110px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-heading .small {
+      color: var(--rose);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 14px;
+    }
+
+    .section-heading h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.8rem, 7vw, 4.8rem);
+      font-weight: 500;
+      color: #5a4350;
+      line-height: 0.95;
+    }
+
+    /* =========================
+       LETTER
+    ========================= */
+
+    .letter-wrap {
+      position: relative;
+    }
+
+    .letter {
+      position: relative;
+      padding: clamp(30px, 6vw, 70px);
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      background: var(--white-glass);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      box-shadow:
+        0 30px 90px var(--shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.75);
+      overflow: hidden;
+    }
+
+    .letter::before {
+      content: "♡";
+      position: absolute;
+      top: -40px;
+      right: 15px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 15rem;
+      line-height: 1;
+      color: rgba(213, 133, 163, 0.06);
+      pointer-events: none;
+    }
+
+    .letter-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 38px;
+      color: var(--rose);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .letter-top::after {
+      content: "";
+      height: 1px;
+      width: 80px;
+      background:
+        linear-gradient(
+          to right,
+          rgba(217, 141, 170, 0.5),
+          transparent
+        );
+    }
+
+    .apology-text {
+      position: relative;
+      z-index: 1;
+      white-space: pre-wrap;
+      font-family: "DM Sans", sans-serif;
+      font-size: clamp(1rem, 2vw, 1.12rem);
+      line-height: 2.05;
+      font-weight: 300;
+      color: #51434c;
+      text-align: left;
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
+
+    .apology-text::first-letter {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 3.5rem;
+      color: #c9799d;
+      float: left;
+      line-height: 0.75;
+      margin: 8px 8px 0 0;
+    }
+
+    .soft-note {
+      margin-top: 30px;
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       FINAL SECTION
+    ========================= */
+
+    .final-section {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .final-card {
+      width: min(750px, 100%);
+      padding: clamp(40px, 7vw, 75px);
+      border-radius: 38px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.38);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      box-shadow: 0 30px 90px var(--shadow);
+    }
+
+    .final-card h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 25px;
+      color: #5a4350;
+    }
+
+    .big-heart {
+      display: block;
+      font-size: 4rem;
+      margin: 25px 0 30px;
+      filter:
+        drop-shadow(
+          0 10px 20px rgba(206, 120, 155, 0.25)
+        );
+      animation:
+        heartbeat 2.4s ease-in-out infinite;
+    }
+
+    .hidden-message {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition:
+        max-height 1s ease,
+        opacity 0.7s ease,
+        margin 0.7s ease;
+    }
+
+    .hidden-message.show {
+      max-height: 300px;
+      opacity: 1;
+      margin-top: 30px;
+    }
+
+    .hidden-message-inner {
+      padding: 25px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 0.95rem;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+      padding: 30px 20px 50px;
+      color: rgba(91, 69, 81, 0.6);
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* =========================
+       MUSIC
+    ========================= */
+
+    .music-control {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 50;
+      width: 48px;
+      height: 48px;
+      border:
+        1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      background:
+        rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      color: #a96e8b;
+      cursor: pointer;
+      font-size: 1.1rem;
+      box-shadow:
+        0 10px 30px rgba(113, 74, 96, 0.12);
+      transition: 0.3s ease;
+    }
+
+    .music-control:hover {
+      transform: scale(1.08);
+      background:
+        rgba(255, 255, 255, 0.6);
+    }
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition:
+        opacity 1s ease,
+        transform 1s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      .hero {
+        min-height: 92vh;
+      }
+
+      h1 {
+        font-size:
+          clamp(
+            4rem,
+            19vw,
+            6rem
+          );
+      }
+
+      section.content-section {
+        width:
+          min(
+            calc(100% - 22px),
+            1050px
+          );
+
+        padding: 75px 0;
+      }
+
+      .letter {
+        border-radius: 25px;
+        padding: 27px 22px;
+      }
+
+      .apology-text {
+        font-size: 0.98rem;
+        line-height: 1.9;
+      }
+
+      .final-card {
+        border-radius: 28px;
+        padding: 45px 25px;
+      }
+
+      .music-control {
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+
+    /* =========================
+       ACCESSIBILITY
+    ========================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Ambient background -->
+  <div class="ambient" aria-hidden="true">
+    <div class="blob one"></div>
+    <div class="blob two"></div>
+    <div class="blob three"></div>
+  </div>
+
+  <!-- Floating particles -->
+  <div
+    class="particles"
+    id="particles"
+    aria-hidden="true">
+  </div>
+
+  <!-- Heart rain layer -->
+  <div
+    id="heartRain"
+    aria-hidden="true">
+  </div>
+
+  <!-- Optional music -->
+  <audio id="backgroundMusic" loop>
+    <source
+      src="your-song.mp3"
+      type="audio/mpeg">
+  </audio>
+
+  <!-- Music button -->
+  <button
+    class="music-control"
+    id="musicButton"
+    type="button"
+    aria-label="Play background music"
+    title="Play music">
+    ♫
+  </button>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          A little something
+          <span>♡</span>
+          for you
+        </div>
+
+        <h1>
+          I'm Really Sorry.
+        </h1>
+
+        <p class="hero-subtitle">
+          To my Sanu ❤️<br>
+          Some things are difficult to say out loud...
+        </p>
+
+        <button
+          class="button"
+          id="readButton"
+          type="button">
+          Read my heart ↓
+        </button>
+
+        <span
+          class="hero-heart"
+          aria-hidden="true">
+          ♡
+        </span>
+
+      </div>
+
+    </section>
+
+    <!-- APOLOGY -->
+    <section
+      class="content-section"
+      id="apology">
+
+      <div
+        class="section-heading reveal">
+
+        <div class="small">
+          From my heart
+        </div>
+
+        <h2>
+          A letter for you.
+        </h2>
+
+      </div>
+
+      <div
+        class="letter-wrap reveal">
+
+        <article class="letter">
+
+          <div class="letter-top">
+            For Sanvi
+          </div>
+
+          <div class="apology-text">Sanu baal.....
+
+mi aaj je kela tyasathi im extremely extremely sorry.... sanu i swear mi tula sodun kutlya muli la bagat paan nhi and mi upneet la moti bolat hoto and maja dokyat aala ki mi tila as usual 60 kgs ki tyre bolnar hoto and mi te bolo and maja dokyat mi vichar paan paan nhi kela ki fude mi kay bolu tila but idk swataun chukun like bhai literally mala mahitich nhi kasa zhala but genuinely mi vichar paan navta kela and mi tila bolo... pls sanu trust me... and sanu baal i assure you ki fude asa chukun paan nhi honar kadhich and sanu mi genuinely bolto aahe aaj parent mi swatashi paan itka loyal navta jevda tuja shi aahe and you why im so loyal to you? Cause ur the only one who loved me the way i want understood me more than my self, trusted me more than anyone else and another reason is that i just love you limitlessly... and sanvi im genuinely speak i dont even care about other girls cause your my princess... khup sarya lokana soft corner asto ex sathi but mala asa kona sathich nhi aahe, maje sagle soft and hard things and sagla bss tuja sathich aahe... your the only thing which matters to me.... if in future i lose everything i wont be sad because ik that i have you but if i lose you what will be i left with.... Sanu ik you are hurt but please don't overthink cause it cause you more harm but if you don't hesitate to come to me i will make sure that i will over explain to your every overthinking cause I LOVE YOU SANVI AND ALWAYS WILL.... IM REALLY SORRY SANVI 😞</div>
+
+          <div class="soft-note">
+            ♡ Take your time. Read every word whenever you're ready. ♡
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- FINAL -->
+    <section
+      class="content-section final-section">
+
+      <div
+        class="final-card reveal">
+
+        <h2>
+          One last thing, Sanu...
+        </h2>
+
+        <span
+          class="big-heart"
+          aria-hidden="true">
+          ❤️
+        </span>
+
+        <p
+          style="
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 28px;
+          ">
+          There are some things that only the heart knows how to say.
+        </p>
+
+        <button
+          class="button"
+          id="heartButton"
+          type="button">
+          From my heart ❤️
+        </button>
+
+        <div
+          class="hidden-message"
+          id="hiddenMessage">
+
+          <div class="hidden-message-inner">
+            I don't expect a website or an apology to instantly fix everything.
+            I just want you to know that I genuinely mean every word I said.
+            I am sorry, Sanu. ❤️
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    Made with a sorry heart, just for Sanvi. ❤️
+  </footer>
+
+  <script>
+
+    /* =========================================================
+       READ MY HEART + HEART RAIN
+    ========================================================= */
+
+    const readButton =
+      document.getElementById("readButton");
+
+    const apologySection =
+      document.getElementById("apology");
+
+    const heartRain =
+      document.getElementById("heartRain");
+
+
+    function startHeartRain() {
+
+      heartRain.innerHTML = "";
+
+      const heartTypes = [
+        "❤️",
+        "🩷",
+        "💕",
+        "💗",
+        "💖",
+        "💘",
+        "💞",
+        "💓",
+        "💝",
+        "♡",
+        "♥"
+      ];
+
+      const numberOfHearts = 90;
+
+      for (let i = 0; i < numberOfHearts; i++) {
+
+        const heart =
+          document.createElement("span");
+
+        heart.className = "rain-heart";
+
+        heart.textContent =
+          heartTypes[
+            Math.floor(
+              Math.random() *
+              heartTypes.length
+            )
+          ];
+
+        heart.style.left =
+          Math.random() * 100 + "%";
+
+        const size =
+          Math.random() * 25 + 15;
+
+        heart.style.fontSize =
+          size + "px";
+
+        const duration =
+          Math.random() * 3 + 3.5;
+
+        heart.style.animationDuration =
+          duration + "s";
+
+        const delay =
+          Math.random() * 1.8;
+
+        heart.style.animationDelay =
+          delay + "s";
+
+        const swayOne =
+          Math.random() * 160 - 80;
+
+        const swayTwo =
+          Math.random() * 220 - 110;
+
+        const swayThree =
+          Math.random() * 280 - 140;
+
+        heart.style.setProperty(
+          "--sway-one",
+          swayOne + "px"
+        );
+
+        heart.style.setProperty(
+          "--sway-two",
+          swayTwo + "px"
+        );
+
+        heart.style.setProperty(
+          "--sway-three",
+          swayThree + "px"
+        );
+
+        const rotationOne =
+          Math.random() * 360 - 180;
+
+        const rotationTwo =
+          Math.random() * 540 - 270;
+
+        const rotationThree =
+          Math.random() * 720 - 360;
+
+        heart.style.setProperty(
+          "--rotation-one",
+          rotationOne + "deg"
+        );
+
+        heart.style.setProperty(
+          "--rotation-two",
+          rotationTwo + "deg"
+        );
+
+        heart.style.setProperty(
+          "--rotation-three",
+          rotationThree + "deg"
+        );
+
+        heartRain.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, (duration + delay) * 1000 + 1000);
+
+      }
+    }
+
+
+    readButton.addEventListener(
+      "click",
+      () => {
+
+        /* Start heart rain immediately */
+        startHeartRain();
+
+        /* Scroll to the letter */
+        setTimeout(() => {
+
+          apologySection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }, 350);
+
+      }
+    );
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const revealObserver =
+      new IntersectionObserver(
+        (entries, observer) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+
+    /* =========================================================
+       FLOATING PARTICLES
+    ========================================================= */
+
+    const particlesContainer =
+      document.getElementById("particles");
+
+
+    function createParticle() {
+
+      const particle =
+        document.createElement("div");
+
+      particle.className =
+        "particle";
+
+      particle.style.left =
+        Math.random() * 100 + "%";
+
+      particle.style.animationDuration =
+        Math.random() * 12 + 10 + "s";
+
+      particle.style.animationDelay =
+        Math.random() * 5 + "s";
+
+      const particleSize =
+        Math.random() * 4 + 2;
+
+      particle.style.width =
+        particleSize + "px";
+
+      particle.style.height =
+        particleSize + "px";
+
+      particlesContainer.appendChild(
+        particle
+      );
+
+      setTimeout(() => {
+        particle.remove();
+      }, 23000);
+    }
+
+
+    for (let i = 0; i < 25; i++) {
+
+      setTimeout(
+        createParticle,
+        i * 400
+      );
+
+    }
+
+
+    setInterval(
+      createParticle,
+      900
+    );
+
+
+    /* =========================================================
+       NORMAL FLOATING HEARTS
+    ========================================================= */
+
+    function createFloatingHeart() {
+
+      const heart =
+        document.createElement("div");
+
+      heart.className =
+        "heart";
+
+      heart.textContent =
+        Math.random() > 0.5
+          ? "♡"
+          : "♥";
+
+      heart.style.left =
+        Math.random() * 100 + "%";
+
+      heart.style.fontSize =
+        Math.random() * 12 + 12 + "px";
+
+      heart.style.animationDuration =
+        Math.random() * 7 + 8 + "s";
+
+      document.body.appendChild(
+        heart
+      );
+
+      setTimeout(() => {
+        heart.remove();
+      }, 16000);
+    }
+
+
+    setInterval(
+      createFloatingHeart,
+      3500
+    );
+
+
+    /* =========================================================
+       FINAL HEART MESSAGE
+    ========================================================= */
+
+    const heartButton =
+      document.getElementById("heartButton");
+
+    const hiddenMessage =
+      document.getElementById("hiddenMessage");
+
+
+    heartButton.addEventListener(
+      "click",
+      () => {
+
+        const isVisible =
+          hiddenMessage.classList.toggle(
+            "show"
+          );
+
+        heartButton.textContent =
+          isVisible
+            ? "❤️ Always."
+            : "From my heart ❤️";
+
+        if (isVisible) {
+
+          setTimeout(() => {
+
+            hiddenMessage.scrollIntoView({
+              behavior: "smooth",
+              block: "center"
+            });
+
+          }, 300);
+
+        }
+
+      }
+    );
+
+
+    /* =========================================================
+       BACKGROUND MUSIC
+    ========================================================= */
+
+    const musicButton =
+      document.getElementById(
+        "musicButton"
+      );
+
+    const backgroundMusic =
+      document.getElementById(
+        "backgroundMusic"
+      );
+
+    let musicPlaying = false;
+
+
+    musicButton.addEventListener(
+      "click",
+      async () => {
+
+        try {
+
+          if (!musicPlaying) {
+
+            await backgroundMusic.play();
+
+            musicPlaying = true;
+
+            musicButton.textContent =
+              "Ⅱ";
+
+            musicButton.setAttribute(
+              "aria-label",
+              "Pause background music"
+            );
+
+            musicButton.setAttribute(
+              "title",
+              "Pause music"
+            );
+
+          } else {
+
+            backgroundMusic.pause();
+
+            musicPlaying = false;
+
+            musicButton.textContent =
+              "♫";
+
+            musicButton.setAttribute(
+              "aria-label",
+              "Play background music"
+            );
+
+            musicButton.setAttribute(
+              "title",
+              "Play music"
+            );
+
+          }
+
+        } catch (error) {
+
+          console.warn(
+            "Music could not be played. Make sure your MP3 file exists.",
+            error
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
